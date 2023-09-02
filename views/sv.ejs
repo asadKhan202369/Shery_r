@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="../stylesheets/myv.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+  <style>
+      .more_card{
+        position: absolute;
+        z-index: 999;
+        right: 10%;
+        top: 5%;
+         width: fit-content;
+         height: fit-content;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-end;
+         justify-content: center;
+         gap: 10px;
+         background-color:#e6dcdc;
+         box-shadow: 0 0 2px #7b7676;
+         padding:2vw  1vw;
+         border-radius: 10px;
+        padding-top: initial;
+        display: none;
+        cursor: pointer;
+        
+      }
+      #more{
+        cursor: pointer;
+      }
+      .cancel{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10vw;
+        height: 7vh;
+      }
+      #close_card{
+        cursor: pointer;
+        font-size: 2vw;
+      }
+  </style>
+<body>
+    <div id="main">
+        <a href="/profile">
+            <i id="close_page" class="ri-close-fill"></i>
+        </a>
+        <div class="more_card">
+            <i id="close_card" class="ri-close-fill"></i>
+            <a href="/editV/<%= sv._id %>">
+                <div class="cancel">
+                    <small>Edit Vehicle</small>
+                </div>
+            </a>
+            <a href="/delete/vehicle/<%= sv._id  %>">
+               
+                <div class="cancel">
+                    <small>Delete Vehicle</small>
+                </div>
+            </a>
+        </div>
+
+        <div id="div">
+            <div class="left">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <% sv.pic.forEach(function(pic){ %>
+                            <div class="swiper-slide">
+                                <img src="../images/uploads/vehicleimages/<%= pic %>" alt="">
+                            </div>
+                            <% }) %>
+
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="user">
+                    <div class="uimg">
+                        <img src="../images/uploads/userimages/<%= user.userProfileimg %>" alt="">
+                        <h6>
+                            <%= user.name %>
+                        </h6>
+                    </div>
+                    <i id="more" style="font-size: 2.5vw;font-weight: 500;" class="ri-more-fill"></i>
+                </div>
+                <div class="botm">
+                    <div class="botm1">
+                        <h6>Vehicle Brand</h6>
+                        <h6>Vehicle Nama</h6>
+                        <h6>Vehicle Type</h6>
+                        <h6>Vehicle Colour</h6>
+                        <h6>Fuel Type</h6>
+                        <h6>Transmission Type</h6>
+                        <h6>Seating Capacity</h6>
+                        <% if(sv.vehicleType==='car' || sv.vehicleType==='Car' ){ %>
+                            <h6>Air Conditioner </h6>
+                            <h6>Music System</h6>
+                            <% } %>
+                                <h6>Year of Manufacture</h6>
+                                <h6>Rental Price (Per Day)</h6>
+                                <h6>Shop Name</h6>
+                                <h6>Shop Address</h6>
+                                <h6>Total Booking</h6>
+                                <h6>Insurance Provider</h6>
+                                <h6>Insurance Start Date</h6>
+                                <h6>Insurance End Date</h6>
+                                <h6>Vehicle Description</h6>
+                                <h6>Terms & Conditions</h6>
+
+                    </div>
+                    <div class="botm1">
+                        <h6>
+                            <%= sv.vehicleBrand %>
+                        </h6>
+                        <h6>
+                            <%= sv.vehicleName %>
+                        </h6>
+                        <h6>
+                            <%= sv.vehicleType %>
+                        </h6>
+                        <h6>
+                            <%= sv.vehicleColor %>
+                        </h6>
+                        <h6>
+                            <%= sv.fuelType %>
+                        </h6>
+                        <h6>
+                            <%= sv.transmissionType %>
+                        </h6>
+                        <h6>Maximum <%= sv.seating %> Person Can Sit</h6>
+                        <% if(sv.vehicleType==='car' || sv.vehicleType==='Car' ){ %>
+                            <% if(sv.Ac===true){ %>
+                                <h6>Is Available</h6>
+                                <% }else{ %>
+                                    <h6>Not Available</h6>
+                                    <% } %>
+                                        <% if(sv.Es===true){ %>
+                                            <h6>Is Available</h6>
+                                            <% }else{ %>
+                                                <h6>Not Available</h6>
+                                                <% } %>
+                                                    <% } %>
+
+                                                        <h6>
+                                                            <%= sv.YOM.toLocaleString().split(',')[0] %>
+                                                        </h6>
+                                                        <h6>₹ <%= sv.RentalPrice %>
+                                                        </h6>
+                                                        <h6>
+                                                            <%= sv.Shopname %>
+                                                        </h6>
+                                                        <h6>
+                                                            <%= sv.Shopaddress %>
+                                                        </h6>
+                                                        <h6>
+                                                            <%= sv.BookingId.length %>
+                                                        </h6>
+                                                        <h6>
+                                                            <%= sv.insuranceP %>
+                                                        </h6>
+                                                        <h6>
+                                                            <%= sv.insuranceSD.toLocaleString().split(',')[0] %>
+                                                        </h6>
+                                                        <h6>
+                                                            <%= sv.insuranceED.toLocaleString().split(',')[0] %>
+                                                        </h6>
+                                                        <h6>
+                                                            <%= sv.Des %>
+                                                        </h6>
+                                                        <h6>
+                                                            <%= sv.TC %>
+                                                        </h6>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  <% include ./partials/loco.ejs %>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", { autoplay: true, grabCursor: true, loop: true });
+
+        document.querySelector("#more")
+        .addEventListener("click",function(){
+           gsap.to(".more_card",{
+             display:"flex",
+             ease:Expo.easeInout,
+           })
+        })
+        document.querySelector("#close_card")
+        .addEventListener("click",function(){
+           gsap.to(".more_card",{
+            delay:-.5,
+             display:"none",
+             ease:Expo.easeInout,
+           })
+        })
+    </script>
+</body>
+
+</html>

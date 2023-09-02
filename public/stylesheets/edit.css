@@ -1,0 +1,310 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#popup_box a:hover {
+  box-shadow: 5px 5px 0px #000000ef;
+  color: white;
+}
+.prfimg{
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    background-color: red;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+  
+  .prfimg img{
+    width: 100%;
+    height:100%;
+   
+  }
+/* body::-webkit-scrollbar{
+    display: none;
+} */
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: teal;
+    overflow-x: hidden;
+   background-image: url("https://img.freepik.com/free-photo/psychedelic-paper-shapes-with-copy-space_23-2149378246.jpg?w=1380&t=st=1687368677~exp=1687369277~hmac=32799a81a8c9246cfc4701325ba91a31288f443e5082b9ad82b8f04afe6c01c3");
+   /* background-image: url("https://img.freepik.com/free-photo/cute-woman-showing-hands-gesture-empty-white-banner-business-woman-concept-pink-background-3d-rendering_56104-1469.jpg?size=626&ext=jpg&uid=R107214502&ga=GA1.2.683316832.1687191915&semt=sph"); */
+   background-size: cover;
+   background-position: center;
+}
+
+  /* .overlay */
+/* nav */
+
+#nav{
+    width:100%;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    position: fixed;
+    top: 0%;
+    /* left: 3%; */
+    z-index: 9999999999;
+   
+    padding: 0 2vw;
+    overflow: hidden;
+    padding-right: 3vw;
+    padding-top: 1vw;
+   
+  }
+  #nav .search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    /* transform: translateY(-200%); */
+  }
+  #nav .search i{
+    color: #000 ;
+  }
+  .brand_name{
+    /* transform: translateY(-100%); */
+  }
+  .brand_name .top{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+    margin-bottom: -10px;
+  }  
+  .brand_name .top .img_container{
+    width: 15%;
+    height: 100%;
+  }
+  #st1{
+    margin-left: -25px;
+  }
+  #st2{
+    margin-left: 12px !important;
+  }
+  .brand_name .bottom{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .brand_name{
+    padding-right: 50px;
+    /* background-color: red; */
+    margin-bottom: 15px;
+  }
+  .brand_name h6{
+    font-family: Roobert;
+    letter-spacing: 1px;
+    font-size: 2.3vw;
+    color: #000;
+    margin-top: -10px;
+    font-weight: 500;
+  }
+  .brand_name .top img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover ;
+  }
+  .right_nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  #nav .menu_icon{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* background-color: teal; */
+    /* transform: translateY(-150%); */
+  }
+  .menu_icon h6{
+    font-family: Roobert;
+    letter-spacing: 1px;
+    font-size: 1.2vw;
+    color: #000;
+    font-weight: 100 !important;
+  }
+  #nav .menu_circle{
+    display: flex;flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  #nav .menu_circle .line{
+    width: 60%;
+    height: 2px;
+    background-color: #000;
+  }
+  #nav .button{
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 40px;
+    /* transform: translateY(-100%); */
+  }
+  #nav .hover_button{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center !important;
+    width: 30%;
+    height: 50%;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    
+  }
+  #nav .hover_button h6{
+    color: #fff;
+    font-size: 1.2vw;
+    font-family: Roobert;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+  #nav .hover_button:hover .scroll_button{
+    top: 0%;
+  }
+  #nav .hover_button:hover{
+    border: none !important;
+  }
+  #nav .scroll_button{
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow-x: auto;
+    background-color: rgba(230, 80, 26, 0.91);
+    background-color: #fa5c40;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1).5s;
+    
+  }
+  #nav .scroll_button small{
+    color: #fff;
+    margin-left: 10px;
+    font-family: Roobert;
+    letter-spacing: 1px;
+    font-weight: 100;
+
+    animation: scroll 2s linear infinite;
+
+  }
+
+  #nav .scroll_button::-webkit-scrollbar{
+    display: none;
+  }
+
+  @keyframes scroll {
+    from
+     {
+       transform: translateX(0%);
+     }
+     to
+     {
+        transform: translateX(calc(-100% - 12px));
+     }
+   }
+/* nav */
+.top{
+    width: 80%;
+    height: 25vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.form{
+    width: 80%;
+
+    /* background-color: red; */
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left:15vw;
+}
+#mf{
+    display: none;
+}
+.prf_img{
+    padding-top: 2vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 20vh;
+}
+.prf_img .imgg{
+    margin-left: 15vw;
+    width: 100px;
+    height:100px;
+    border-radius: 50%;
+    background-color: thistle;
+    overflow: hidden;
+}
+.prf_img .imgg img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+  
+}
+form{
+    width: 50%;
+}
+.form-label {
+    color: #12539a;
+    font-size: 20px;
+    font-weight: 500;
+    margin: initial;
+}
+form input{
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: initial !important;
+    border-bottom: 1px solid #000 !important;
+    outline: none;
+    border: none;
+}
+form button{
+    background-color: #12539a;
+    width: 100%;
+    margin-top: 2vw;
+}
+.form-check-label{
+   color: #12539a;
+   font-weight: 600;
+}
+.top h1{
+    color: #12539a;
+    width: fit-content;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+}
+
+#exampleCheck1{
+    border: 1px solid #12539a !important;
+    color: #12539a !important;
+}

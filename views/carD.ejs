@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= car.vehicleName %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/carD.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+</head>
+<style>
+   p{
+    white-space: nowrap;
+   }
+ 
+   .footer{
+    position: relative;
+    z-index: 1;
+   }
+  
+   .footer .ftop{
+    display: flex;
+    align-items: center !important;
+    height: 15vh;
+      justify-content: center;
+  }
+</style>
+<body>
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+    
+    <div id="main">
+          <div class="pg1" style="background-color: #E6DCDC">
+               <div class="photos">
+                  <div class="left">
+                    <img src="../images/uploads/vehicleimages/<%= car.pic[2] %>" alt="">
+                  </div>
+                  <div class="right">
+                      <div class="one"> 
+                          <img src="../images/uploads/vehicleimages/<%= car.pic[1] %>" alt="">
+                      </div>
+                      <div class="one">
+                        <img src="../images/uploads/vehicleimages/<%= car.pic[0] %>" alt="">
+                      </div>
+                      <div class="one">
+                        <div class="overlayOne">
+                          <small>more photos</small>
+                        </div>
+                        <img src="../images/uploads/vehicleimages/<%= car.pic[3] %>" alt="">
+                    </div>
+                  </div>
+               </div>
+                <div class="btm">
+                        <h1><%= car.vehicleBrand %>&nbsp; <%= car.vehicleName %></h1>
+                        <h3>
+                        <span>₹ <%= car.RentalPrice %> /-</span> <br>
+                        Daily Rent
+                        </h3>
+                  <a href="/checkout/<%= car._id %>">
+
+                    <div class="button">
+                        <i style="margin-bottom: 1vmax;" class="ri-mail-fill"></i>
+                        <h6>Book Now</h6>
+                    </div>
+                   </a>
+
+                </div>
+          </div>
+          <div class="pg2">
+              <div class="divs">
+                  <div class="div">
+                    <div class="img">
+                       <i class="ri-group-line"></i>
+                    </div>
+                    <div class="f">
+                        <h6>Passanger Capacity</h6>
+                        <p>Maximum <%= car.seating %> Passenger can sit</p>
+                    </div>
+                  </div>
+                  <div class="div">
+                    <div class="img">
+                       <img src="../images/fuel-icon-logo-design-template-vector-removebg-preview.png" alt="">
+                    </div>
+                    <div class="f">
+                        <h6>Fuel Type</h6>
+                        <p> <%= car.fuelType %> </p>
+                    </div>
+                  </div>
+                  <div class="div">
+                     <div class="img">
+                        <img src="../images/auto-gear-icon-line-symbol-260nw-1013190133-removebg-preview.png" alt="">
+                     </div>
+                    <div class="f">
+                        <h6>Transmission Type</h6>
+                        <p> <%= car.transmissionType %> </p>
+                    </div>
+                  </div>
+              </div>
+              <div id="ak" class="divs">
+                <div class="div" style="margin-bottom: 5vh;">
+                   <h4>Whats this <%= car.vehicleType %> offers </h4>
+                </div>
+                <% if(car.vehicleType === 'Car' || car.vehicleType === 'car') { %>
+                    <div class="div" style="display: flex; align-items: center;gap: 150px;">
+                      <div class="icons">
+                          <i class="ri-wifi-line"></i>
+                          <p>Wifi</p>
+                      </div>
+                      <div class="icons">
+                          <div class="img">
+                              <img src="../images/air-conditioner-icon-vector-isolated-white-background-your-web-mobile-app-design-air-conditioner-logo-concept-air-133756784__1_-removebg-preview.png" alt="">
+                          </div>
+                          <p>Air Conditioner</p>
+                      </div>
+                      <div class="icons">
+                          <i class="ri-music-2-fill"></i>
+                          <p>Music System</p>
+                      </div>
+                      <div class="div">
+                          <div class="img">
+                            <img src="https://www.limogroup.se/wp-content/themes/tbs_limogroup/static/img/leather_seats-icon.svg" alt="">
+                          </div>
+                        <div class="f">
+                            <h6>Lether Seats</h6>
+                        </div>
+                      </div>
+                    </div>
+                <% }else{ %>
+                    <div class="div" style="display: flex; align-items: center;gap: 150px;">
+                      <div class="icons">
+                        <div class="img">
+                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVZ2WYCOQCrooJX7Ow82Zd2xy9GdjunXj5ew&usqp=CAU" alt="">
+                        </div>
+                          <p>Good Mielagep</p>
+                      </div>
+                      <div class="icons">
+                          <div class="img">
+                            <img src="data:image/png;base64,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" alt="">
+                          </div>
+                          <p>Good Comfort</p>
+                      </div>
+                      <div class="icons">
+                        <i class="ri-speed-up-line"></i>
+                          <p>High Speed</p>
+                      </div>
+                      <div class="div">
+                          <div class="img">
+                            <img src="https://www.limogroup.se/wp-content/themes/tbs_limogroup/static/img/leather_seats-icon.svg" alt="">
+                          </div>
+                        <div class="f">
+                            <h6 style="white-space: nowrap;">Lether Seats</h6>
+                        </div>
+                      </div>
+                    </div>
+                <% } %>
+                
+                
+                
+              </div>
+               <div class="h1">
+                  <h1>Which you will Drive</h1>
+               </div>
+              <div class="divs" style="height: 70vh;border-radius: 15px;margin-top: 3vh;margin-bottom: 10vh;overflow: hidden;padding: initial;">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">  
+                        <% car.pic.forEach(function(pic){ %>
+                            <div class="swiper-slide"> 
+                                  <img src="../images/uploads/vehicleimages/<%= pic %>" alt="">
+                            </div>
+                       <% }) %>
+                       
+                        </div>
+                        <div class="swiper-button-next"></div>
+                       <div class="swiper-button-prev"></div>
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+              </div>
+              <div id="th" class="divs">
+                <div class="div" style="margin-bottom: 5vh;">
+                    <h4>Things to know </h4>
+                 </div>
+                 <div id="rules" class="div">
+                      <div class="first">
+                           <h3>Rules</h3>
+                           <div class="subtxt">
+                                <h6>Check-in after 1:00 pm.</h6>
+                                <h6><%= car.seating %> Person Maximum.</h6>
+                                <h6>No Damage</h6>
+                           </div>
+                      </div>
+                      <div class="first">
+                        <h3>Safety Instructions</h3>
+                        <div class="subtxt">
+                             <h6>Wear seatbelt while driving.</h6>
+                             <h6>Don't drink alchohol while Driving</h6>
+                             <h6>Don't ride overspeed</h6>
+                        </div>
+                   </div>
+                   <div class="first">
+                    <h3>Cancellation policy</h3>
+                    <div class="subtxt">
+                         <h6>This reservation is non-refundable.</h6>
+                         <h6>Review the Host's full cancellation policy which applies</h6>
+                         <h6> 
+                            if YOU cancel for illness or disruptions caused by COVID-19.</h6>
+                    </div>
+               </div>
+                 </div>
+              </div>
+          </div>
+        <% include ./partials/footer.ejs %>
+          
+    </div>
+    <% include ./partials/loco.ejs %>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../javascripts/cardD.js"></script>
+    <script src="../javascripts/loco.js"></script>
+    <script src="../javascripts/loader.js"></script>
+    <script src="../javascripts/nav.js"></script>
+    <script src="../javascripts/navscroll.js"></script>
+    <script src="../javascripts/search.js"></script>
+    <script>
+         const newImageSrc = '/images/uploads/Shery Ride-logos/Shery Ride-logos_black.png';
+          document.getElementById('logoimg').src = newImageSrc;
+       var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      grabCursor:true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop:true,
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
+      },
+      mousewheel: true,
+      keyboard: true,
+    });
+  
+    </script>
+</body>
+</html>

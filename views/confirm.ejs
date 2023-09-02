@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/confirm.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<style>
+    #pg1 {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    #nav {
+        background-color: #e6dcdc !important;
+        border-bottom: 2px solid #cec3c3 !important;
+        z-index: 9999999;
+    }
+
+    #nav h6 {
+        color: #000 !important;
+    }
+
+    a {
+        text-decoration: none !important;
+    }
+
+    .ovrl {
+        width: 100%;
+        height: 80vh;
+        background-color: transparent;
+    }
+
+    #main {
+        background-color: transparent !important;
+    }
+
+  
+    .footer .ftop {
+        align-items: center !important;
+    }
+
+    #nav_loader #links .containers {
+        height: 75px !important;
+    }
+
+    #nav_loader #links {
+        justify-content: flex-end !important;
+    }
+
+    #nav_loader #images img {
+        top: 57%;
+    }
+
+    #nav_loader #images img {
+        top: 57%;
+    }
+
+    #MENU {
+        color: #000;
+    }
+    #search{
+        color: #000;
+    }
+</style>
+
+<body>
+    <% include ./partials/nav.ejs %>
+        <% include ./partials/search.ejs %>
+            <div id="main">
+                <div id="pg1">
+                    <div class="head">
+                        <h1>Your <%= v.vehicleType %> is reserved at Sherry Ride</h1>
+                    </div>
+                    <div class="vehicle_img">
+                        <img src="../images/uploads/vehicleimages/<%= v.pic[0] %>" alt="">
+                        <!-- <img src="https://i.pinimg.com/564x/62/a3/57/62a35791229f9c66e36c08ce4b200596.jpg" alt=""> -->
+                    </div>
+                    <h2>First time renting with us?</h2>
+                    <div class="first_time">
+                        <div class="fdiv">
+                            <div class="fimg">
+                                <img src="../images/images-removebg-preview.png" alt="">
+                            </div>
+                            <div class="ftxt">
+                                <h6>Credit card in <br> your name ready</h6>
+                            </div>
+                        </div>
+                        <div class="fdiv">
+                            <div class="fimg">
+                                <img src="../images/drivers-license-black-icon-11637140609cvhcbhygmr-removebg-preview (1).png"
+                                    alt="">
+                            </div>
+                            <div class="ftxt">
+                                <h6>Make sure to have <br> your valid drivers license</h6>
+                            </div>
+                        </div>
+                        <div class="fdiv">
+                            <div class="fimg">
+                                <img src="../images/car-key-icon-design-free-vector-removebg-preview.png" alt="">
+                            </div>
+                            <div class="ftxt">
+                                <h6>$99 deposit will <br> be held at pickup</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <% var e=b.endDate.getFullYear() %>
+                        <% var s=b.startDate.getFullYear() %>
+                            <div class="date">
+                                <div class="date_one">
+                                    <h6>START DATE</h6>
+                                    <h5>
+                                        <%= b.startDate.toISOString().split('T')[0] %>
+                                    </h5>
+                                    <small>
+                                        <%= v.Shopaddress %>
+                                    </small>
+                                </div>
+
+                                <div class="date_one">
+                                    <h6>END DATE</h6>
+                                    <h5>
+                                        <%= b.endDate.toISOString().split('T')[0] %>
+                                    </h5>
+                                    <small>
+                                        <%= v.Shopaddress %>
+                                    </small>
+                                </div>
+                            </div>
+                            <h2>Your Receipt</h2>
+                            <div class="y_rc">
+                                <div class="reciept">
+                                    <div class="t">
+                                        <h6>ITEM DESCRIPTION</h6>
+                                        <H6>PRICE</H6>
+                                    </div>
+                                    <div class="c">
+                                        <div class="crow">
+                                            <h6>
+                                                <%= v.vehicleBrand %>&nbsp;<%= v.vehicleName %>(<%= b.totalDays %>
+                                                            &nbsp;Days)
+                                            </h6>
+                                            <% var p=v.RentalPrice * b.totalDays %>
+                                                <% var i=(p * 18)/100 %>
+                                                    <% var is=(v.RentalPrice * 5)/100 %>
+                                                        <% var t=p + i + is %>
+
+                                                            <h5>₹ <%= p %>
+                                                            </h5>
+                                        </div>
+                                        <div class="crow">
+                                            <h6>Tax and Fees(GST 18%)</h6>
+                                            <h5>₹ <%= i %>
+                                            </h5>
+                                        </div>
+                                        <div class="crow">
+                                            <h6>Insurance Add on</h6>
+                                            <h5>₹ <%= is %>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="b">
+                                        <div class="pn" id="rzp-button1">
+                                            Pay Now
+                                        </div>
+                                        <h6>₹ <%= t %>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2>Have a Question?</h2>
+                            <div class="faq">
+                                <a href="#">
+                                    <div class="qu1">
+                                        <div class="qimg">.
+                                            <img src="../images/downloadii-removebg-preview.png" alt="">
+                                        </div>
+                                        <h6>Go to FAQ</h6>
+                                    </div>
+                                </a>
+                                <a href="tel:+1234567890">
+                                    <div class="qu1">
+                                        <div class="qimg">.
+                                            <img src="../images/downloadi11-removebg-preview.png" alt="">
+                                        </div>
+                                        <h6 style="white-space: nowrap;color: #000;">Give us a call</h6>
+                                    </div>
+                                </a>
+                                <a href="mailto:ak1933929@gmail.com">
+                                    <div class="qu1">
+                                        <div class="qimg">.
+                                            <img src="../images/images__1_-removebg-preview.png" alt="">
+                                        </div>
+                                        <h6>Message us</h6>
+                                    </div>
+                                </a>
+                            </div>
+                </div>
+            <% include ./partials/footer.ejs %>
+            </div>
+                <% include ./partials/loco.ejs %>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+                    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+                    <script src="../javascripts/nav.js"></script>
+                    <script src="../javascripts/loco.js"></script>
+                    <script src="../javascripts/loader.js"></script>
+                    <script src="../javascripts/confirm.js"></script>
+                    <script src="../javascripts/search.js"></script>
+                    <script>
+
+                        var orderId;
+                        $(document).ready(function () {
+                            var settings = {
+                                "url": "/create/orderId/<%= v._id %>/<%= b._id %>",
+                                "method": "POST",
+                                "timeout": 0,
+                                "headers": {
+                                    "Content-Type": "application/json"
+                                }
+                            };
+
+                            //creates new orderId everytime
+                            $.ajax(settings).done(function (response) {
+
+                                orderId = response.id;
+                                // console.log(orderId);
+                                $("button").show();
+                                var options = {
+                                    "key": "rzp_test_e0p4ROsVzyQ7xL", // Enter the Key ID generated from the Dashboard
+                                    "amount": response.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                                    "currency": "INR",
+                                    "name": "Sherry_Ride",
+                                    "description": "Test Transaction",
+                                    "image": "https://example.com/your_logo",
+                                    "order_id": response.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+                                    "handler": function (response) {
+                                       
+
+                                        var settings = {
+                                            "url": "/api/payment/verify",
+                                            "method": "POST",
+                                            "timeout": 0,
+                                            "headers": {
+                                                "Content-Type": "application/json"
+                                            },
+                                            "data": JSON.stringify({ response }),
+                                        }
+                                        $.ajax(settings).done(function (response) {
+                                            if (response.signatureIsValid === 'true') {
+                                                alert("your bokking is successfull please check your mail for more details")
+                                                window.location.href = '/myrented'
+                                                done();
+                                            }
+                                            else {
+                                                alert("failed")
+                                            }
+                                        })
+                                    },
+                                    "prefill": {
+                                        "name": "<%= user.name %>",
+                                        "email": "<%= user.email %>",
+                                        "contact": "<%= user.contactnumber%>"
+                                    },
+                                    "notes": {
+                                        "address": "Razorpay Corporate Office"
+                                    },
+                                    "theme": {
+                                        "color": "#3399cc"
+                                    }
+                                };
+                                var rzp1 = new Razorpay(options);
+                                rzp1.on('payment.failed', function (response) {
+                                    alert(response.error.code);
+                                    alert(response.error.description);
+                                    alert(response.error.source);
+                                    alert(response.error.step);
+                                    alert(response.error.reason);
+                                    alert(response.error.metadata.order_id);
+                                    alert(response.error.metadata.payment_id);
+                                });
+                                document.getElementById('rzp-button1').onclick = function (e) {
+                                    rzp1.open();
+                                    e.preventDefault();
+                                }
+                            });
+                        });
+
+                        function done() {
+                            fetch('/confirm/booking', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ key: 'value' })
+                            })
+                                .then(response => response.text())
+                                .catch(error => console.log(error));
+                        }
+
+                        const newImageSrc = '/images/uploads/Shery Ride-logos/Shery Ride-logos_black.png';
+                        document.getElementById('logoimg').src = newImageSrc;
+
+                    </script>
+</body>
+
+</html>

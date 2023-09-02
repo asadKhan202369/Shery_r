@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/My vehicle.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+</head>
+<body>
+
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+    <div id="main">
+        <h1>Vehicle You Rented In</h1>
+        <div id="courses">
+            <% user.Bookmark.forEach(function(us){ %>
+              <div style="width: 21vw;" id="singleCourse">
+                 <div style="height: 25vh;" id="image">
+                 <img src="../images/uploads/vehicleimages/<%= us.vehicleId.pic[0] %>" alt="">
+                 </div>
+                 <h2 id="courseName" onclick="window.location.href='#'"><%= us.vehicleId.vehicleBrand %></h2>
+                 <h4 id="courseName" onclick="window.location.href='#'"><%= us.vehicleId.vehicleName %></h4>
+                 
+                 <% const currentDate=new Date(); %>
+                 <% if(currentDate>= us.startDate && currentDate <=us.endDate){ %>
+                    <small>
+                        <div id="button">
+                            <div onclick="window.location.href='/myv/<%= us.vehicleId._id %>'" id="fees">
+                                <p>Show Details</p>
+                                <i class="ri-checkbox-circle-fill"></i>
+                            </div>
+                            <div onclick="window.location.href='#'" id="pay">
+                               <p>Journey Running</p>
+                           </div>
+                            
+                         </div>
+                    </small>
+                    <% }else if(currentDate < us.startDate){ %>
+                        <small>
+                            
+                            <div id="button">
+                                <div onclick="window.location.href='/myv/<%= us.vehicleId._id %>'" id="fees">
+                                    <p>Show Details</p>
+                                    <i class="ri-checkbox-circle-fill"></i>
+                                </div>
+                                <div onclick="window.location.href='/delete/Booking/<%= us.vehicleId._id %>/<%= us._id %>'" id="pay">
+                                   <p>Cancel Booking</p>
+                               </div>
+                                
+                             </div>
+                        </small>
+                        <% }else if(currentDate> us.endDate){ %>
+                            <small>
+                                <div id="button">
+                                    <div onclick="window.location.href='/myv/<%= us.vehicleId._id %>'" id="fees">
+                                        <p>Show Details</p>
+                                        <i class="ri-checkbox-circle-fill"></i>
+                                    </div>
+                                    <div onclick="window.location.href='#'" id="pay">
+                                       <p>Jounrney completed</p>
+                                   </div>
+                                 </div>
+                            </small>
+                            <% }else{ %>
+                                <small>
+                                    Something Wrong
+                                </small>
+                                <% } %>   
+                 
+             </div>
+            <% }) %>
+        </div>
+        
+        <% if(user.vehicles.length>0 || user.Bookmark.length >0 ){ %>
+            <!-- <div id="courses">
+              <% uniqueVehicles.forEach(vehicleId=> { %>
+                <% const vehicle=user.BookedvID.find(v=> v._id.toString() === vehicleId); %>
+                    <div id="singleCourse">
+                        <div id="image">
+                        <img src="../images/uploads/vehicleimages/<%= vehicle.pic[0] %>" alt="">
+                        </div>
+                        <h2 id="courseName" onclick="window.location.href='/courses/CoursesDetails/Mastering-the-Art-of-Resume'"><%= vehicle.vehicleBrand %></h2>
+                        <h4 id="courseName" onclick="window.location.href='/courses/CoursesDetails/Mastering-the-Art-of-Resume'"><%= vehicle.vehicleName %></h4>
+                        
+                            
+                        <div id="button">
+                                        <div onclick="window.location.href='/myv/<%= vehicle._id %>'" id="fees">
+                                            <p>Show Details</p>
+                                            <i class="ri-checkbox-circle-fill"></i>
+                                        </div>
+                                        
+                                        <div onclick="window.location.href='#'" id="pay">
+                                            <p>Cancel Booking</p>
+                                        </div>
+                        </div>
+                    </div>
+              <% }) %>
+            </div> -->
+       <% }else{ %>
+        <div class="nov" style="position:relative; display: flex;align-items: center;justify-content: center;">
+             <h1 id="notEnrollYet">
+                You are not Rented any  Vehicle  Yet
+                 <br>
+                <button onclick="window.location.href='/allvehicles'"> <a href="/allvehicles">Rent now</a></button> 
+           </h1>
+        </div>
+        <% } %>
+    </div>
+
+    <% include ./partials/loco.ejs  %>
+    <script src="../javascripts/nav.js"></script>
+    <script src="../javascripts/loader.js"></script>
+    <script src="../javascripts/search.js"></script>
+</body>
+</html>

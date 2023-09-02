@@ -1,0 +1,192 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="brand_name">
+  <div class="top">
+      <div class="img_container">
+          <img id="st1" src="../images/starWhite-removebg-preview.png" alt="">
+      </div>
+      <div class="img_container">
+          <img id="st1" src="../images/starWhite-removebg-preview.png" alt="">
+      </div>
+  </div>
+  <div class="bottom">
+      <h6>Brand name</h6>
+  </div>
+
+</div> -->
+
+
+<!-- router.get('/confirm/:id/:Id',async function(req,res){
+  try{
+      const originalUrl = req.originalUrl; // Get the original URL
+    const segments = originalUrl.split('/').filter(segment => segment !== '');
+    const firstSegment = segments[0];
+    const vehicleInfo = segments[1];
+    const bookingInfo = segments.slice(2).join('/');
+    console.log('Second Segment:', vehicleInfo);
+    console.log('Remaining Segments:', bookingInfo);
+    let user = await userModel.findOne({email:req.user.email})
+    let vhcl = await vehicleModel.findOne({_id:req.params.id})
+    let book = await  bookingModel.findOne({_id:req.params.Id})
+    // const currentUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    // console.log(currentUrl);
+    // console.log(vhcl);
+    res.render("c",{user,vhcl,book});
+  }catch{
+      console.log("error accur");
+      res.redirect("back")
+  }
+
+}) -->
+<!-- 
+<a href="/profile">
+  <div class="prfimg">
+      <img src="../images/profile.jpg" alt="">
+  </div>
+</a> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre>
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+           
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        
+    </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+ </div>
+ 
+ <!-- Swiper JS -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style (1).css">
+</head>
+<body>
+    
+<!--  -->
+</body>
+</html>
+
+
+#branddiv
+{
+  width: 80%;
+  height: 90px;
+  /* display: flex; */
+  overflow: hidden;
+  /* gap: 10px; */
+  position: relative;
+  margin-left: auto;
+  background-color: yellowgreen;
+  /* align-items: center; */
+  white-space: nowrap;
+  display: flex;
+  /* animation: brandanime 20s linear infinite; */
+}
+#branddiv img
+{
+  width: 10%;
+display: inline-block;
+margin-left: -4px;
+
+/* margin-bottom: auto; */
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+  background-color: red;
+}
+.div{
+    animation: brandanime 10s linear infinite;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: steelblue;
+}
+@keyframes brandanime {
+ from
+  {
+    transform: translateX(0%);
+  }
+  to
+  {
+    transform: translateX(-100%);
+  }
+}

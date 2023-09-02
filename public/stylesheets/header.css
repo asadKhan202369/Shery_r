@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    width: 100%;
+}
+
+.footer{
+    width: 100%;
+    height: 80vh;
+    background-color: red;
+    /* position: fixed;
+    z-index: -1;
+    bottom: 0; */
+    background-color: #1c1c1c;
+  }
+  .footer::-webkit-scrollbar{
+    display: none !important;
+  }
+  .footer .ftop{
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    width: 100%;
+    height: 20vh;
+    /* background-color: red; */
+  }
+  .footer .ftop::-webkit-scrollbar{
+    display: none;
+  }
+  .footer .ftop h1{
+    font-family: gilroy;
+    color: #f0edea;
+    font-size: 17px;
+    margin-right: 70px;
+    white-space: nowrap;
+    letter-spacing: .5px;
+    font-weight: 600;
+    flex-shrink: 0;
+    animation-name: scroll2;
+   animation-duration: 1.5s;
+   animation-timing-function:linear;
+   animation-iteration-count: infinite;
+   display: flex !important;
+   align-items: center !important;
+   justify-content: center !important;
+  }
+  
+  @keyframes scroll2{
+    0%{
+       transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-100% - 72px));
+        /* transform: translateX(-100%); */
+    }
+  }
+  /* \color: #f47a44; */
+  .footer .fbtm::-webkit-scrollbar{
+    display: none;
+  }
+  .footer .fbtm{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    overflow-x: auto;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    /* background-color: teal; */
+    /* background-color: #fff; */
+  }
+  
+  .footer .fbl{
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    width: 40%;
+    height: 70vh;
+    justify-content: flex-end;
+    /* background-color: #fff; */
+  }
+  .fbtxt{
+    /* background-color: red; */
+    border-right: 1px solid #fff;
+    padding-right: 20px;
+    width: 75%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 20px;
+    /* background-color: red;    */
+    align-items: flex-start;
+  }
+  .fbtxt h1{
+    font-size: 5vw;
+    white-space: nowrap;
+    font-family: "Roslindale display" !important;
+    color: #fefdf1;
+    font-weight: 500;
+    /* background-color: yellow; */
+    margin-bottom: -35px;
+  }
+  .fbtxt h6{
+    color: #fff;
+    font-family: gilroy;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    margin-left: -15px;
+    text-align: left;
+  }
+  .fbtxt h6 span{
+    color: red;
+    display: inline-block;
+    margin-left: 20px;
+    font-family: gilroy;
+  }
+  .fbtxt .button_div .circle{
+    background-color: #f6efe2 !important;
+  }
+  .fbtxt .button_div .ucircle{
+    border: 1px solid #000;
+  }
+  .fbtxt .button_div h4{
+    color: #f6efe2;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .footer .fbr{
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    width: 60%;
+    height: 60vh;
+    /* background-color: #111; */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+  }
+  .epn{
+    /* background-color: teal;/ */
+    /* padding: 10px 0; */
+    height: 70%;
+    display: flex;
+    padding-left: 100px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .link{
+    /* background-color: teal;/ */
+    /* padding: 10px 0; */
+    height: 70%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+  
+  .divi h6{
+    font-family: roobert;
+    font-weight: 500;
+    font-size: 17px;
+    color: #f2f2ec;
+    /* letter-spacing: 1px; */
+  }
+  .divi h5{
+    font-weight: 590;
+    font-size: 2.5vw;
+    margin-top: 10px;
+    color: #f2f2ec;
+    font-family: "Roslindale display" !important;
+    /* letter-spacing: 1px; */
+  }
+  .lst{
+    width: 100%;
+    height: 10vh;
+    background-color: #f6efe2;
+  }
+  .button_div{
+    position: relative;
+    /* background-color: #000; */
+    width: fit-content;
+    /* padding: 0 20px; */
+    border-radius: 30px;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px;
+    margin-top: 50px;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+    /* background-color: red; */
+  }
+  .lcircle .dot{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 27.5%;
+    height: 20px;
+    width: 20px;
+    /* border: 1px solid #fff; */
+    border-radius: 50%;
+    background-color: #c2c0b5;
+    /* display: none; */
+    opacity: 0;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+    z-index: 9999;
+  }
+  .button_div:hover{
+    background-color: #000;
+    /* padding: 0 10px; */
+    padding-right: 20px;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)2s;
+  }
+  .button_div:hover .lcircle .dot{
+    /* display: initial !important; */
+    opacity: 1;
+    left: 20%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+  .button_div:hover .circle{
+    opacity: 0;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+  
+  .button_div:hover h4{
+    color: #fff !important;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+  .button_div h4{
+    font-family:"gilroy" !important;
+    font-weight: 600;
+    letter-spacing: .5px;
+   font-size: 18px;
+   transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+  
+  .lcircle .circle{
+    height: 55px;
+    width: 55px;
+    /* border: 1px solid #fff; */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    justify-content: center;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+  
+  .lcircle .circle .ucircle{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+  .lcircle .circle .ucircle img{
+    width: 50%;
+    color: #fff;
+    font-size: 20px;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1s;
+  }
+  
+  .footer .fbr::-webkit-scrollbar{
+    display: none;
+  }

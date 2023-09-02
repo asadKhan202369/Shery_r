@@ -1,0 +1,269 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.form_container{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("https://img.freepik.com/free-photo/psychedelic-paper-shapes-with-copy-space_23-2149378246.jpg?size=626&ext=jpg&uid=R107214502&ga=GA1.2.683316832.1687191915&semt=ais"); */
+    /* background-image: url("https://img.freepik.com/premium-photo/psychedelic-paper-shapes-with-copy-space_23-2149378292.jpg?size=626&ext=jpg"); */
+    /* background-image: url("https://img.freepik.com/free-photo/front-wheel-blue-vintage-sedan_114579-6115.jpg?size=626&ext=jpg&uid=R107214502&ga=GA1.2.683316832.1687191915&semt=ais"); */
+    /* background-image: url("https://img.freepik.com/premium-photo/old-yellow-vintage-car_37416-68.jpg?w=1380"); */
+    /* background-image: url("https://img.freepik.com/premium-photo/bangkok-thailand-08082022-lamborghini-luxury-super-car-fast-sports-premium-lighting-background-3d-illustration_67092-1242.jpg?size=626&ext=jpg&uid=R107214502&ga=GA1.2.683316832.1687191915&semt=ais"); */
+    /* background-image: url("https://img.freepik.com/premium-photo/car-background-sunset-mountain-roadl-added-artificial-noisegrain-smoke_113323-1743.jpg?size=626&ext=jpg&uid=R107214502&ga=GA1.2.683316832.1687191915&semt=ais"); */
+    background-image: url("https://img.freepik.com/premium-photo/red-modern-car-headlights-black-background_67340-169.jpg?size=626&ext=jpg&uid=R107214502&ga=GA1.1.683316832.1687191915&semt=ais");
+    background-size: cover;
+    background-position: center;
+}
+.frm{
+    position: relative;
+    width: 60%;
+    height: 100%;
+    /* background-color: #fff; */
+}
+.frm .top{
+    position: fixed;
+    top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 2vw;
+    width: 49%;
+}
+.frm .top i{
+    margin-bottom: -2vw !important;
+   font-size: 2.5vw;
+   color: #fff;
+   font-family: "FH Giselle";
+}
+.frm .btm{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    /* background-image: linear-gradient(to right top, #1db9ff, #a2a0ff, #fb7ad4, #ff677a, #f48603); */
+
+    /* background-color: #666; */
+}
+
+form{
+    position: relative;
+    padding: 2vw 0;
+    padding-top: initial;
+    width: 80%;
+    max-height: 95vh;
+    border-radius: 10px;
+    color: #dfc06b;
+    color: #fff;
+    margin-top: 5vw;
+    /* padding-left: 2vw; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center ;
+    justify-content: center;
+    /* background-color: #fff; */
+    box-shadow: 0 25px 25px rgba(0,0,0,.5);
+    /* background-color: hsla(40, 100%, 91%, 0.3); */
+    /* background: linear-gradient(to left top, rgba(0, 0, 0, .6), rgba(255, 255, 255, .1));
+    background: linear-gradient(to left top, rgba(0, 0, 0, .5), rgba(255, 255, 255, .5));
+    background: linear-gradient(180deg,#181818,#181818,rgba(81,81,81,.7)); */
+    overflow-y: auto;
+}
+form::-webkit-scrollbar{
+    width: 10%;
+    color: red;
+    display: none;
+}
+form .info{ 
+    width: 80%;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 2vw;
+    /* background-color: red; */
+}
+form .information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+}
+form input{
+    width: 100% !important;
+    background-color: transparent !important;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    /* border: none !important;
+    border-bottom: 1px solid #fff !important;
+    border-radius: initial !important; */
+}
+form textarea{
+    width: 100% !important;
+    background-color: transparent !important;
+    border: 1px solid #fff !important;
+    color: #fff;
+}
+form select{
+    color: #fff !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    border: 1px solid #fff !important;
+    margin-bottom: 20px;
+}
+form option{
+    color: #000 !important;
+    /* background-color:#999 !important; */
+    /* border: 1px solid #fff !important; */
+}
+form h6{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5vw;
+}
+form checkbox{
+/* background-color: rebeccapurple !important; */
+width: 20px;
+height: 20px;
+}
+form input::placeholder{
+    color: #dadada !important;
+    letter-spacing: .6px;
+    font-size: 12px;
+    font-family: gilroy;
+}
+form textarea::placeholder{
+    color: #dadada !important;
+    letter-spacing: .6px;
+    font-size: 12px;
+    font-family: gilroy;
+}
+.form-check-input{
+    width: 25px !important;
+    height: 25px !important;
+    /* background-color: rebeccapurple !important; */
+}
+.form-check-label{
+    /* color: red; */
+    font-family: gilroy;
+    font-size: 13px;
+    margin-left: 10px;
+    margin-top: 6px;
+}
+.check-options{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+    /* gap: 20px; */
+}
+a{
+    text-decoration: none;
+}
+form select{
+    width: 70% !important;
+}
+form h1{
+    font-family: voyage;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    /* position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%,0); */
+    white-space: nowrap;
+    /* color: rebeccapurple; */
+}
+
+form button{
+    width: 80%;
+    text-align: center;
+    background-color: transparent !important;
+    border: 1px solid #fff !important;
+    padding:10px 0 !important;
+}
+
+textarea:focus, input:focus {
+    color: #ffff !important;
+    font-family: gilroy;
+    font-size: 15px ;
+}
+
+
+.form-control::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  
+  .form-control::-moz-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  
+  .form-control::-ms-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  
+  .form-control::-o-calendar-picker-indicator {
+    filter: invert(1);
+  }
+  
+  .form-control::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  
+  .form-select svg {
+    color: red;
+    fill: red !important;
+  }
+  #popup_box a:hover {
+    box-shadow: 5px 5px 0px #000000ef;
+    color: white;
+  }
+
+  @media screen and (max-width:767px) {
+    form .information{
+    }
+    .frm{
+        width: 100%;
+    }
+    form{
+        width: 100%;
+        padding-left: initial;
+    }
+    form h1 {
+        margin-top: 60px;
+    }
+    form .info{
+        width: 90%;
+    }form h6 {
+        font-size: 6vw;
+        margin-top: 2vmax;
+        margin-bottom: 2vmax;
+    }
+    .frm .top{
+        display: flex;
+        width: 100%;
+        padding-right: 2vmax;
+    }
+    .frm .top i{
+        font-size:10vw;
+        margin-bottom: 1vmax !important;
+    }
+  }
+  

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invalid</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/invalid.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/navloader.css">
+</head>
+<style>
+    a{
+        text-decoration: none
+    }
+  #nav {
+    /* background-color: #e6dcdc; */
+    /* border: 1px solid #c6bebe; */
+  }
+   .right_nav h6 {
+    transform: translateY(0%) !important;
+    font-weight: 500 !important;
+    transform: initial;
+    color: #fff;
+   }
+   #nav .menu_icon {
+    transform: translateY(0%);
+   }
+   #nav .menu_icon h6 {
+    color: #fff;
+   }
+   #nav .menu_circle {
+    border: 1px solid #fff;
+   }
+   #nav .menu_circle .line {
+    background-color: #fff;
+   }
+   #nav .search{
+    border: 1px solid #fff;
+    transform: translateY(0%);
+   }
+   #nav .search i{
+    color: #fff;
+   }
+</style>
+<body>
+    <% include ./partials/nav.ejs %>
+    <div id="main">
+        <h1 id="notEnrollYet">
+             You are not Able to add your Vehicle  Yet
+              <br>
+            <button onclick="window.location.href='/profile'"> <a href="/profile">Edit now</a> </button> 
+        </h1>
+    </div>
+    <% include ./partials/loco.ejs %>
+    <script src="../javascripts/nav.js"></script>
+</body>
+</html>

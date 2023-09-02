@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+ .profiles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:1vw;
+    width: 100%;
+    height: 90%;
+    background-color: #e6dcdc;
+    overflow: hidden;
+    position: relative !important;
+}
+.profiles .user{
+    width: 80%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5vh;
+    margin-top: 8vh !important;
+}
+.profiles .user .info{
+    display: flex;
+    align-items:center;
+    gap: 30px;
+    justify-content: flex-start;
+    padding-left: 7vw;
+    width: 60%;
+    display: flex;
+    height: 100%;
+    padding-top: 4vw;
+
+}
+.h6{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+.h5{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    align-items: flex-start;
+}
+.profiles .user .info h6{
+    font-family: gilroy;
+    font-size: 16px;
+    letter-spacing: .5px;
+    font-weight: 500;
+
+}
+.profiles h1{
+    font-family: "FH Giselle";
+    font-family: montserrat;
+    letter-spacing: 1px;
+    font-size:30px;
+    padding: 0 5px;
+    border-bottom: 2px solid #000;
+    width: fit-content;
+    margin-bottom: 10px;
+    font-weight: 400;
+    color: #0f4b91;
+}
+.profiles .user .photu{
+    width: 40%;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 2vw;
+    justify-content: flex-end;
+    height: 100%;
+ 
+    background-color: #fff;
+}
+.profiles .user .photu .primg{
+    width:200px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    overflow: hidden;
+    height: 200px;
+ 
+}
+.profiles .user .photu .primg img{
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+
+.profiles .yvehicle{
+    position: relative;
+    width: 100%;
+    max-height: 70vh;
+    position: relative;
+    border-top: 1px solid #000;
+    padding-top: h;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+a{
+    text-decoration: none;
+}
+.profiles .yvehicle .topp{
+    width: 100% ;
+    height: 6vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content:center;
+    position: relative;
+    padding-top: 4vh;
+    gap: 10vw;
+    grid-area: 10px;
+    background-color: teal !important;
+  
+}
+
+.profiles .yvehicle h5{
+    font-weight: 600;
+    color: #0f4b91;
+    color: #000;
+    letter-spacing: 1px;
+    font-family: gilroy;
+    font-size: 20px;
+    width: fit-content;
+    padding: 0 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-right: 20vw;
+    
+}
+#mv{
+    border-top: 2px solid #000;
+}
+button{
+    width: 200px;
+    margin-left: 38vw;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #0f4b91;
+    background-color: #000;
+    border: none;
+    color: #fff;
+    letter-spacing: .5px;
+    position: absolute;
+    top: 13%;
+    right: 10%;
+    transform: translate(-50%,0%);
+}
+.profiles   i{
+    position: absolute;
+    z-index: 999999999999999999;
+    right: 2%;
+    top: 3%;
+    font-size: 30px;
+    color: #000;
+}
+.profiles .vehicles::-webkit-scrollbar{
+    display: none;
+}  
+.vehicles{
+    padding: 0 1vw;
+    padding-top: 4vh;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 70%;
+    max-height: 46vh;
+    overflow-y: auto;
+    margin-left: 5vw;
+    padding-bottom: 7vh;
+}
+
+.vehicles .vehicle{
+    border-radius: 10px;
+    width:21vw;
+    height: 40vh;
+    background-color: ghostwhite;
+}
+.vehicle img{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    object-fit: cover;
+}
+.nov{
+    padding-top: 7vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.nov small{
+    font-family: gilroy;
+    font-size: 2vw;
+    margin-top: 10px;
+}
+.nov img{
+    width: 20vw;
+    height: 30vh;
+} 

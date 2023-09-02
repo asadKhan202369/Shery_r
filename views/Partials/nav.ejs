@@ -1,0 +1,125 @@
+
+
+<% if(user){ %>
+    <div id="nav"  data-scroll data-scroll-sticky data-scroll-target="#main">
+         <div onclick="window.location.href='/'" class="menu_icon">
+            <img id="logoimg" src="/images/uploads/Shery Ride-logos/Shery Ride-logos_white.png" alt="">
+          
+        </div> 
+        <div class="center">
+            <a href="/allvehicles"><h6 style="text-transform: capitalize;margin-right: 30px;">Vehicles</h6></a> 
+            <a style="text-decoration: none;" href="/av">
+                <h6>Add vehicle</h6>
+            </a>
+            <a style="text-decoration: none;" href="/about">
+                <h6>About us</h6>
+            </a>
+            <a style="text-decoration: none;" href="/service">
+                <h6>Services</h6>
+            </a>  
+        </div>
+        <div class="right_nav">
+            <!-- <h6 id="search">Search</h6> -->
+            <i id="search" class="ri-search-2-line"></i>
+            <div id="menu" class="menu_circle">
+                <i id="MENU" class="ri-menu-3-line"></i>
+                <i id="navclose" class="ri-close-fill"></i>
+            </div>
+            <h6 id="userLogin" style="text-transform: capitalize;">Hey,<%= user.name %></h6>    
+        </div>
+        
+    </div>
+    <div id="popup_box">  
+        <h4 style="text-transform: capitalize;letter-spacing: 1px;">  
+             <%= user.name %>
+        </h4>
+        <a href="/profile">My Account</a>
+        <a href="/logout">Logout</a>
+        
+
+    </div>
+    <div id="side_nav">
+        <div id="icon" class="row">
+              <div class="cancel">
+                <i class="ri-close-line"></i>
+              </div>
+        </div>
+        <div onclick="window.location.href='/'" class="row">
+               <h3>Home</h3>
+       </div>
+       <div onclick="window.location.href='/allvehicles'" class="row">
+               <h3>Vehicles</h3>
+       </div>
+       <div onclick="window.location.href='/about'" class="row">
+           <h3>About us</h3>
+       </div>
+       <div onclick="window.location.href='/service'" class="row">
+               <h3>Services</h3>
+       </div>
+       <div onclick="window.location.href='/av'" class="row">
+               <h3>Add Vehicle</h3>
+       </div>
+       <div onclick="window.location.href='/profile'" class="row">
+        <h3>Your Account</h3>
+</div>
+   </div>
+<% }else{ %>
+    <div id="nav"  data-scroll data-scroll-sticky data-scroll-target="#main">
+        <div onclick="window.location.href='/'" class="menu_icon">
+           <img id="logoimg" src="/images/uploads/Shery Ride-logos/Shery Ride-logos_white.png" alt="">
+         
+       </div> 
+       <div class="center">
+           <a href="/allvehicles"><h6 style="text-transform: capitalize;margin-right: 30px;">Vehicles</h6></a> 
+           <a style="text-decoration: none;" href="/av">
+               <h6>Add vehicle</h6>
+           </a>
+           <a style="text-decoration: none;" href="/about">
+               <h6>About us</h6>
+           </a>
+           <a style="text-decoration: none;" href="/service">
+               <h6>Services</h6>
+           </a>  
+       </div>
+       <div class="right_nav">
+           <!-- <h6 id="search">Search</h6> -->
+           <i id="search" class="ri-search-2-line"></i>
+           <div id="menu" class="menu_circle">
+               <i id="MENU" class="ri-menu-3-line"></i>
+               <i id="navclose" class="ri-close-fill"></i>
+           </div>
+           <h6 onclick="window.location.href='/login'" id="userLogin" style="text-transform: capitalize;">Sign in</h6>    
+       </div>
+       
+   </div>  
+  <div id="side_nav">
+         <div id="icon" class="row">
+               <div class="cancel">
+                 <i class="ri-close-line"></i>
+               </div>
+         </div>
+         <div onclick="window.location.href='/'" class="row">
+                <h3>Home</h3>
+        </div>
+        <div onclick="window.location.href='/allvehicles'" class="row">
+                <h3>Vehicles</h3>
+        </div>
+        <div onclick="window.location.href='/about'" class="row">
+            <h3>About us</h3>
+        </div>
+        <div onclick="window.location.href='/service'" class="row">
+                <h3>Services</h3>
+        </div>
+        <div onclick="window.location.href='/av'" class="row">
+                <h3>Add Vehicle</h3>
+        </div>
+        <div onclick="window.location.href='/login'" class="row">
+            <h3>Sign In</h3>
+    </div>
+    </div>
+<% } %>
+
+<script>
+    
+
+</script>

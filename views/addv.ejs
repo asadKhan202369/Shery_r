@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vehicle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/addv.css">
+</head>
+<style>
+</style>
+<body>
+    <div class="form_container">
+         <div class="frm">
+             
+             <div class="btm">
+                <form action="/create/vehicle" method="post"  enctype="multipart/form-data">
+                    <div class="top">
+                        <a href="/"><i class="ri-close-line"></i></a>
+                     </div>
+                    <h1>Add Your Vehicle</h1>
+                    <div class="information">
+                        <div class="info">
+                            <h6>Vehicle Details:</h6>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Your Vahicle Type</label>
+                              <input name="Vt" placeholder="Your Vahicle Type" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Your Vahicle Brand/Make</label>
+                                <input name="Vb" placeholder="Your Vehicle Brand/Make" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Your Vahicle Name</label>
+                                <input name="Vn" placeholder="Your Vehicle Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label"> Your Vahicle Colour</label>
+                                <input name="Vc" placeholder="Your vehicle Colour" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Your Vahicle Number</label>
+                                <input name="VN" placeholder="Your Vehicle Number" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label"> Year of Manufacture</label>
+                                <input style="color: #fff !important;" name="YOM" placeholder="Year of Manufacture" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <select name="Ft" class="form-select" aria-label="Default select example">
+                                <option selected>Fuel Type</option>
+                                <option value="Petrol">Petrol</option>
+                                <option value="Deasel">Deasel</option>
+                            </select>
+                            <select name="Tt" class="form-select" aria-label="Default select example">
+                                <option selected>Transmission Type</option>
+                                <option id="opt" value="Manual">Manual</option>
+                                <option value="Automatic">Automatic</option>
+                            </select>
+                        </div>
+                        <div class="info">
+                            <h6>Pricing and Availibility:</h6>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Rental Price Per Day</label>
+                                <input name="Price" placeholder="Rental Price Per Day" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Your Shop Name</label>
+                                <input name="Sname" placeholder="Your Shop Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Your Shop Address</label>
+                                <input name="Sadd" placeholder="Your Shop Address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h6>Vehicle Features:</h6>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Seating Capacity</label>
+                                <input name="Sc" placeholder="Seating Capacity" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Luggage Capacity</label>
+                                <input name="Lc" placeholder="Luggage Capacity" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </div>
+                            <div class="check-options">
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Ac" value="true">
+                                    <label class="form-check-label" for="exampleCheck1">Air Conditioning</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Es" value="true">
+                                    <label class="form-check-label" for="exampleCheck1">Entertainment System</label>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="Gps" value="true">
+                                    <label class="form-check-label" for="exampleCheck1">Gps Navigation</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <h6>Add some photos of your vehicle:</h6>
+                            <input type="file" class="form-control" id="formFile" accept="image/*" name="vehiclephoto"  multiple>
+                        </div>
+                        <div class="info">
+                        
+                         <h6>Additional Information:</h6>
+                         <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Description of the vehicle (optional)</label>
+                            <textarea style="color: #fff !important;" name="Des" placeholder="Description of the vehicle" input type="text" name="desc" class="form-control" id="exampleInputPassword1"> </textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Any specific terms and conditions (if applicable)</label>
+                            <textarea style="color: #fff !important;" name="Terms" placeholder="Any specific terms and conditions" input type="text" name="desc" class="form-control" id="exampleInputPassword1"> </textarea>
+                        </div>
+                        
+                        </div>
+                        <div class="info">
+                            <h6>Insurance  Details:</h6>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Insurance Provider</label>
+                                <input name="Ip" placeholder="Insurance Provider" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Insurance Start date</label>
+                                  <input name="Ist" placeholder="Insurance Start date" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              </div>
+                              <div class="mb-3">
+                                  <label for="exampleInputEmail1" class="form-label">Insurance End date</label>
+                                  <input name="Ied" placeholder="Insurance End date" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                              </div>
+                        </div>
+                    <button type="submit" class="btn btn-primary">Add Your Vehicle</button>
+
+                    </div>
+                  </form>
+             </div>
+         </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

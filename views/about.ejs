@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+     <link rel="stylesheet" href="../stylesheets/about.css">
+     <link rel="stylesheet" href="../stylesheets/nav.css">
+     <link rel="stylesheet" href="../stylesheets/footer.css">
+     <link rel="stylesheet" href="../stylesheets/loco.css">
+     <link rel="stylesheet" href="../stylesheets/search.css">
+</head>
+<style>
+      #nav {
+    background-color: #e6dcdc; 
+     border: 1px solid #c6bebe;
+     z-index: 9999999999;
+  }
+  a{
+    text-decoration: none;
+  }
+   #nav h6 {
+    color: #000 !important;
+   }
+   
+   
+ #MENU{
+    color: #000;
+ }
+   
+   #search{
+    color: #000;
+   }
+</style>
+<body>
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+     <div id="main">
+         <div id="pg1">
+             <div class="photo">
+                <div class="divt">
+                    <h3>Get to know <span>us</span></h3>
+                </div>
+             </div>
+             <div class="text">
+                  <div class="left">
+                       <div class="contain">
+                            <h1>A little bit about</h1>
+                            <h2>SheryRide</h2>
+                            <div class="btns">
+                                <div class="btn">
+                                    MEET THE TEAM
+                                </div>
+                                <div class="btn">
+                                    CONTACT US
+                            </div>
+                            </div>
+                       </div>
+                  </div>
+                  <div class="left">
+                      <h3>Your local & loyal agent</h3>
+                      <p>Shery Ride Vehicle Rental was born out of the realisation that the exciting developing region of the 3217 postcode needed a tailored service for those who had chosen to make this new area their home.</p>
+                      <p>With 3217 being the largest continuous growth area within Victoria, we identified the need for a modern agency that would make this region the hero and provide a service that is 100% local and loyal.</p>
+                  </div>
+             </div>
+         </div>
+    <% include ./partials/footer.ejs %>
+     </div>
+    <% include ./partials/loco.ejs %>
+     <script src="../javascripts/nav.js"></script>
+     <script src="../javascripts/loader.js"></script>
+     <script src="../javascripts/loco.js"></script>
+     <script src="../javascripts/search.js"></script>
+     <script>
+        const newImageSrc = '/images/uploads/Shery Ride-logos/Shery Ride-logos_black.png';
+          document.getElementById('logoimg').src = newImageSrc;
+    </script>
+</body>
+</html>

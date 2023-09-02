@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/services.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+</head>
+<style>
+     #MENU{
+        color: #000 !important;
+     }
+     #search{
+        color: #000 !important;
+     }
+    
+
+     #nav {
+        background-color: #e6dcdc;
+        border: 1px solid #c6bebe;
+        z-index: 9999999;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #nav h6 {
+        color: #000;
+    }
+    #search{
+        color: #000;
+    }
+</style>
+
+<body>
+        <% include ./partials/nav.ejs %>
+        <% include ./partials/search.ejs %>
+            <div id="main">
+                <div id="pg1">
+                    <div class="photo">
+                        <div class="divt">
+                            <h3>Get to know our <span>Services</span></h3>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <div class="left">
+                            <div class="contain">
+                                <div class="sr">
+                                    <div class="img">
+                                        <div class="i">
+                                            <i class="ri-bookmark-2-fill"></i>
+                                        </div>
+                                    </div>
+                                    <div class="heading">
+                                        <h6>Easy Booking</h6>
+                                        <p>Read More</p>
+                                    </div>
+                                </div>
+                                <div class="sr">
+                                    <div class="img">
+                                        <div style="font-size: 3vw;
+                                        font-weight: 600;color: #fff;" class="i">
+                                             ₹
+                                        </div>
+                                    </div>
+                                    <div class="heading">
+                                        <h6>Competitive Rates</h6>
+                                        <p>Read More</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contain">
+                                <div class="sr">
+                                    <div class="img">
+                                        <div class="i">
+                                            <i class="ri-thumb-up-fill"></i>
+                                        </div>
+                                    </div>
+                                    <div class="heading">
+                                        <h6>Well-Maintained Vehicles</h6>
+                                        <p>Read More</p>
+                                    </div>
+                                </div>
+                                <div class="sr">
+                                    <div class="img">
+                                        <div class="i">
+                                            <i class="ri-24-hours-line"></i>
+                                        </div>
+                                    </div>
+                                    <div class="heading">
+                                        <h6>24/7 Customer Support</h6>
+                                        <p>Read More</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left" style="padding-left: 5vw;">
+                            <h3>We <span>specialise</span> in</h3>
+                            <p>At Sery Ride Real Estate we understand buying, selling, or leasing a home can be an
+                                emotional and stressful process. We value the relationships we build and maintain with
+                                our clients, which is why we work to relieve this stress through ensuring the process is
+                                as seamless as possible..</p>
+                            <p>As a partner of the Geelong Property Hub, we offer a full range of property services.
+                                Talk to us today about how we can get the best outcome for you..</p>
+                        </div>
+                    </div>
+                </div>
+                <% include ./partials/footer.ejs %>
+            </div>
+            <% include ./partials/loco.ejs %>
+                <script src="../javascripts/nav.js"></script>
+                <script src="../javascripts/loco.js"></script>
+                <script src="../javascripts/loader.js"></script>
+                <script src="../javascripts/search.js"></script>
+    <script>
+           const newImageSrc = '/images/uploads/Shery Ride-logos/Shery Ride-logos_black.png';
+             document.getElementById('logoimg').src = newImageSrc;
+    </script>
+</body>
+
+</html>

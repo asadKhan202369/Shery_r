@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/mainloader.css">
+</head>
+<body>
+    <div id="main_loader">
+        <div class="div">
+              <div class="wheel">
+                  <img src="/images/images__2_-removebg-preview.png" alt="">
+              </div>
+              <div class="line_div">
+                   <div class="line">
+                         <div id="progress-bar"></div>
+                   </div>
+                   <h6 id="counter">10%</h6>
+              </div>
+        </div>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+    function animateProgressBar() {
+        let width = 1;
+        const progressBar = document.getElementById('progress-bar');
+        const counter = document.getElementById('counter');
+    
+        const intervalId = setInterval(() => {
+            if (width >= 100) {
+                clearInterval(intervalId);
+            } else {
+                width++;
+                progressBar.style.width = width + '%';
+                counter.textContent = width + '%';
+            }
+        }, 30);
+    }
+    
+    animateProgressBar();
+
+    gsap.to(".wheel",{
+        rotation: 360,
+        repeat: -1,
+        ease: "linear",
+        duration: 3
+    })
+     gsap.to("#main_loader",{
+        opacity:0,
+        ease:Expo.easeInout,
+        duration:1,
+        delay:3
+     })
+   </script>
+</body>
+</html>

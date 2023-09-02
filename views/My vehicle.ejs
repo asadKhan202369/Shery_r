@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/My vehicle.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/loco.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+</head>
+<body>
+
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+    <div id="main">
+        <h1>Vehicle You Added In</h1>
+        <% if(user.vehicles.length >0 ){ %>
+            <div id="courses">
+               <% user.vehicles.forEach(function(vh){ %>
+                    <div style="width:21vw;" id="singleCourse">
+                        <div style="height: 25vh;" id="image">
+                        <img src="../images/uploads/vehicleimages/<%= vh.pic[0] %>" alt="">
+                        </div>
+                    <h2 id="courseName" ><%= vh.vehicleBrand %></h2>
+                    <h4 id="courseName" ><%= vh.vehicleName %></h4>
+                    
+                        
+                    <div id="button">
+                                    <div onclick="window.location.href='/editV/<%= vh._id %>'" id="fees">
+                                        <p>Edit Vehicle</p>
+                                        <i class="ri-checkbox-circle-fill"></i>
+                                    </div>
+                                    
+                                    <div onclick="window.location.href='/delete/vehicle/<%= vh._id %>'" id="pay">
+                                         <p>Delete vehicle</p>
+                                    </div>
+                    </div>
+                    </div>
+               <% }) %>
+             </div>
+          <% }else{ %>
+                <div class="nov">
+                    <h1 id="notEnrollYet">
+                        You are not Added any  Vehicle  Yet
+                         <br>
+                        <button onclick="window.location.href='/av'"> <a href="/av">Add now</a></button> 
+                   </h1>
+                </div>
+         <% } %>
+
+    </div>
+
+    <% include ./partials/loco.ejs  %>
+    <script src="../javascripts/nav.js"></script>
+    <script src="../javascripts/loader.js"></script>
+    <script src="../javascripts/search.js"></script>
+</body>
+</html>

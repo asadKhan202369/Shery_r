@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/check.css">
+    <link rel="stylesheet" href="../stylesheets/nav.css">
+    <link rel="stylesheet" href="../stylesheets/search.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <style>
+    p{
+     white-space: nowrap;
+    }
+  
+    #nav{
+       background-color: #e6dcdc !important;
+       border-bottom: 2px solid #cec3c3 !important;
+    }
+    #nav h6{
+     color: #000 !important;
+    }
+    #search{
+      color: #000;
+    }
+    #MENU{
+      color: #000;
+    }
+   
+ </style>
+  <body>
+    <% include ./partials/nav.ejs %>
+    <% include ./partials/search.ejs %>
+  
+     <div id="main">
+        <div class="c_pg1">
+            <div class="c_left">
+                 <div class="form">
+                    <div class="form_top">
+                        <h5>Make Your Ride</h5>
+                        <small>Rent a car to move from local hosts in 190+ <br> countries</small>
+                    </div>
+                    <form action="/create/booking" method="post">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">WHERE YOU FROM</label>
+                          <input name="from" placeholder="WHERE YOU FROM" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">WHERE YOU GO</label>
+                            <input name="to" placeholder="WHERE YOU Go" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                          </div>
+                        <div class="mb-3" style="display: none;">
+                            <label for="exampleInputEmail1" class="form-label">v</label>
+                            <input value="<%= v._id %>" name="id" placeholder="v" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Pickup Date</label>
+                            <input name="pickD" placeholder="Pickup Date" type="datetime-local" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Return Date</label>
+                            <input name="RetD" placeholder="Return Date" type="datetime-local" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Book Your Ride</button>
+                      </form>
+                 </div>
+            </div>
+            <div class="c_right">
+                <!--  <img src="https://i.pinimg.com/564x/62/a3/57/62a35791229f9c66e36c08ce4b200596.jpg" alt=""> -->
+                <img src="../images/uploads/vehicleimages/<%= v.pic[0] %>" alt="">
+            </div>
+        </div>
+     </div>
+     <% include ./partials/loco.ejs %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+   <script src="../javascripts/check.js"></script>
+   <script src="../javascripts/nav.js"></script>
+   <script src="../javascripts/loader.js"></script>
+   <script src="../javascripts/search.js"></script>
+   <script>
+        
+     const newImageSrc = '/images/uploads/Shery Ride-logos/Shery Ride-logos_black.png';
+    document.getElementById('logoimg').src = newImageSrc;
+
+   </script>
+  </body>
+</html>
